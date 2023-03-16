@@ -2,6 +2,7 @@
   "name": "reload-window",
   "displayName": "Window Reloader",
   "description": "Allow 1-click access to the \"Reload Window\" functionality",
+  "icon": "assets/icon128.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/roeibh/reload-window"

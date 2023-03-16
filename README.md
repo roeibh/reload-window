@@ -4,9 +4,16 @@ This <sub><sup>tiny</sup></sub> extension add's a status bar button to reload th
 
 ## Installation
 
+### Automatic
+
+- download and install it from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=roeibh.reload-window)
+
+### Manual
+
 - Download the `vsix` file from [here](https://github.com/roeibh/reload-window/releases/tag/first-release)
 - run `code --install-extension reload-window-0.0.1.vsix`
-- Enjoy :)
+
+Enjoy :)
 
 ---
 

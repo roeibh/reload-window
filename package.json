@@ -1,14 +1,14 @@
 {
   "name": "reload-window",
-  "displayName": "Window Reloader",
-  "description": "Allow 1-click access to the \"Reload Window\" functionality",
+  "displayName": "Reload Window",
+  "description": "Reload your VS Code window with one click from the status bar.",
   "icon": "assets/icon128.png",
   "publisher": "roeibh",
   "repository": {
     "type": "git",
     "url": "https://github.com/roeibh/reload-window"
   },
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -19,13 +19,25 @@
     "onStartupFinished"
   ],
   "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Reload Window",
+      "properties": {
+        "reload-window.iconOnly": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show only the reload icon in the status bar."
+        }
+      }
+    }
+  },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node test/extension.cjs"
   },
   "devDependencies": {
     "@types/vscode": "^1.70.0",

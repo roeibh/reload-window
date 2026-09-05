@@ -17,14 +17,24 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
     vscode.StatusBarAlignment.Right,
     100
   );
+  myStatusBarItem.name = "Reload Window";
+  myStatusBarItem.tooltip = "Reload the current VS Code window";
+  myStatusBarItem.accessibilityInformation = { label: "Reload Window" };
   myStatusBarItem.command = myCommandId;
   subscriptions.push(myStatusBarItem);
-  // update status bar item once at start
+  subscriptions.push(
+    vscode.workspace.onDidChangeConfiguration((event) => {
+      if (event.affectsConfiguration("reload-window.iconOnly")) {
+        createStatusBarItem();
+      }
+    })
+  );
   createStatusBarItem();
 }
 
 function createStatusBarItem(): void {
-    myStatusBarItem.text = `$(extensions-refresh) Reload Window`;
+    const iconOnly = vscode.workspace.getConfiguration("reload-window").get<boolean>("iconOnly", false);
+    myStatusBarItem.text = iconOnly ? "$(extensions-refresh)" : "$(extensions-refresh) Reload Window";
     myStatusBarItem.show();
 }
 

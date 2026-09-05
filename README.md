@@ -1,22 +1,31 @@
 # Reload Window
 
-This <sub><sup>tiny</sup></sub> extension add's a status bar button to reload the window (instead of `Ctrl+Shift+P` &rarr; `Developer: Reload Window`)
+Reload your VS Code window with one click from the status bar.
 
-i.e. <img width="130" alt="image" src="https://github.com/user-attachments/assets/d6b4b08d-fbfe-4a99-a39f-1836af51d660">
+Click **Reload Window** to run VS Code's built-in `Developer: Reload Window` command.
 
+<img width="130" alt="Reload Window button in the VS Code status bar" src="https://github.com/user-attachments/assets/d6b4b08d-fbfe-4a99-a39f-1836af51d660">
+
+## Compact mode
+
+Enable **Reload Window: Icon Only** in Settings to hide the label, or add this to `settings.json`:
+
+```json
+"reload-window.iconOnly": true
+```
+
+The button updates immediately. Hover over the icon to see what it does.
 
 ## Installation
 
 ### Automatic
 
-- download and install it from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=roeibh.reload-window)
+- Download and install it from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=roeibh.reload-window)
 
 ### Manual
 
 - Download the `vsix` file from [here](https://github.com/roeibh/reload-window/releases/tag/first-release)
-- run `code --install-extension reload-window-0.0.1.vsix`
-
-Enjoy :)
+- Run `code --install-extension reload-window-0.0.1.vsix`
 
 ---
 
